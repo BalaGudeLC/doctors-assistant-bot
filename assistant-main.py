@@ -11,7 +11,7 @@ TOGETHER_CHAT_URL  = "https://api.together.xyz/v1/chat/completions"
 DEFAULT_MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
 
 def get_api_key() -> str:
-    load_dotenv()
+    load_dotenv(dotenv_path=".env")
     api_key = os.getenv("TOGETHER_API_KEY")
     if not api_key:
         raise RuntimeError("Together.ai api key not found")
@@ -19,7 +19,7 @@ def get_api_key() -> str:
 def call_llm(
         messages: List[Dict[str, str]],
         model: str = DEFAULT_MODEL,
-        temprature: float = 0.2,
+        temperature: float = 0.2,
     ) -> Tuple[str, List[Dict[str, Any]], Dict[str, Any]]:
 
         api_key = get_api_key()
@@ -32,7 +32,7 @@ def call_llm(
         payload = {
              "model": model,
              "messages": messages,
-             "temprature": temprature,
+             "temperature": temperature,
         }
 
         resp = requests.post(TOGETHER_CHAT_URL, headers=headers, json=payload, timeout=60)
