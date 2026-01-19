@@ -1,0 +1,7 @@
+doctor_name,working_days,slots
+Dr X,Mon Tue Wed Thu Fri,10:00|10:30|11:00|11:30
+Dr Y,Tue Wed Fri,11:00|11:30|12:00
+Dr A,Mon Tue Wed Thu Fri Sat,09:30|10:00|10:30
+Dr B,Mon Wed Fri,16:00|16:30|17:00
+Dr C,Wed Thu Sat,15:00|15:30|16:00
+Dr D,Tue Fri,11:00|11:30
